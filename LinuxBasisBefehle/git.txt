@@ -16,5 +16,7 @@ Initialisieren:
 Daten synchronisieren
 	a. ins Verzeichnis git_repos navigieren
 	b. git add . -A
+		# hinzufügen zum Repository und Anlegen einer internen git Datenbank
 	c. git commit -am "Beschreibung der Änderungen"
+		# Bestätigung aller änderungen in der git internen Datenbank
 	d. git push origin master
