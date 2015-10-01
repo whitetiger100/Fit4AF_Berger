@@ -34,7 +34,7 @@ class Movie
 	end
 
 	def normalized_rank
-		@rank / 100
+		@rank / 10
 	end
 
 	def thumbs_up
