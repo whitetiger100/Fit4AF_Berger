@@ -20,3 +20,8 @@ Daten synchronisieren
 	c. git commit -am "Beschreibung der Änderungen"
 		# Bestätigung aller änderungen in der git internen Datenbank
 	d. git push origin master
+	
+	Dateien von Online synchronisieren
+		a. ins Verzeichnis git_repos navigieren
+		b. git reset --hard origin/master
+		c. git pull origin master
