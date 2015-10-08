@@ -20,16 +20,25 @@
 # 	I'm Curly with a health of 145 and a score of 150.
 
 class Game
-
 	def initialize(title)
 		@title = title
 		@player = []
 	end
-
-	def add_player
-		@player << player
+	def add_player(name)
+		@player << name
 	end
-		
+	def play
+		puts "There are #{@player.count} players in #{@title}:"
+		@player.each do |status|
+			puts status
+		end
+		@player.each do |change|
+			change.blam
+			change.woot
+			change.woot
+			puts change
+		end
+	end
 end
 
 class Player
@@ -44,15 +53,15 @@ class Player
 		@health + @name.length
 	end
 	def say_hello
-		"I'm #{@name} mit einem Wert von #{@health} und einen Score von #{score}"
+		"I'm #{@name} with a health of #{@health} and a score of #{score}."
 	end
 	def blam
 		@health += 10
-		puts "#{@name} got blamed"
+		puts "#{@name} got blammed!"
 	end
 	def woot
 		@health -= 10
-		puts "#{@name} got wooted"
+		puts "#{@name} got w00ted!"
 	end
 	def to_s
 		say_hello
@@ -62,3 +71,11 @@ end
 player1 = Player.new("Moe")
 player2 = Player.new("Larry", 60)
 player3 = Player.new("Curly", 125)
+game = Game.new("Knuckleheads")
+game.add_player(player1)
+game.add_player(player2)
+game.add_player(player3)
+
+game.play
+
+puts "#{@player}"
