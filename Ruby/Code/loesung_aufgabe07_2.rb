@@ -19,3 +19,8 @@
 # Stadt: Lodz
 # 2. Person:
 # ......
+
+puts "a.----------------------------------------"
+require 'prime'
+array_prime = Prime.first 10
+puts array_prime
