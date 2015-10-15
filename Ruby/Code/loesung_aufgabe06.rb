@@ -77,5 +77,3 @@ game.add_player(player2)
 game.add_player(player3)
 
 game.play
-
-puts "#{@player}"
