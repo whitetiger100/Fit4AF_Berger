@@ -3,3 +3,8 @@ Anlegen eines neuen Datensatzes:
 	a.save
 
 	Event.create(name: "Beatles", location: "Manchaster", price: 10.00)
+
+	Ausgeben von Datensätzen:
+		Event.all
+			#gibt alle Datensätze aus, die in der Tabelle vorhanden sind.
+			
