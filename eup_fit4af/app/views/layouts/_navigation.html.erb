@@ -1,0 +1,20 @@
+<%# navigation styled for Zurb Foundation 5 %>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name"><%= link_to 'Home', root_path %></li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+  <div class="top-bar-section">
+    <ul>
+      <%= render 'layouts/navigation_links' %>
+    </ul>
+    <ul class="button-group right">
+      <% if current_user %>
+       <li><%= link_to "Logout", session_path(current_user), method: :delete %></li>
+      <% else %>      
+        <li><%= link_to("Register", new_user_path) %></li>
+        <li><%= link_to "Login", new_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

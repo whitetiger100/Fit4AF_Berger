@@ -1,0 +1,11 @@
+<h1>Editing Task for <%= @project.title %></h1>
+
+<%= render 'form' %>
+
+<div class="panel callout radius">
+  <ul class="inline-list">
+    <li><%= link_to 'Project', project_path(@project) %></li>
+    <li><%= link_to 'Show', project_task_path(@project,@task) %> </li>
+    <li><%= link_to 'Back', project_tasks_path(@project) %></li>
+  </ul>
+</div>

@@ -1,0 +1,25 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @project.start_date %>
+</p>
+
+<div class="panel callout radius">
+  <ul class="inline-list">
+    <li><%= link_to 'Edit', edit_project_path(@project) %></li>
+    <li><%= link_to 'Back', projects_path %></li>
+    <li><%= link_to 'Tasks', project_tasks_path(@project) %> </li>
+    <li><%= link_to 'New Task', new_project_task_path(@project) %></li>
+  </ul>
+</div>
+
