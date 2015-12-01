@@ -1,6 +1,20 @@
 <h1>Movies</h1>
-
+<p>Folgende <%= @movies.size %> Filme sind aufgelistet</p>
+<table border=1>
+	<tr>
+		<th>NAME</th>
+		<th>Beschreibung</th>
+		<th>Erscheinungsdatum</th>
+		<th>Bewertung</th>
+		<th>Umsatz</th>
+	</tr>
 <% @movies.each do |movie| %>
-	<%= movie %><br>
-
+	<tr>
+		<td><%= movie.title %></td>
+		<td><%= movie.description %></td>
+		<td><%= movie.released_on %></td>
+		<td><%= movie.rating %></td>
+		<td><%= movie.total_gross %></td>
+	</tr>
 <% end %>
+</table>
