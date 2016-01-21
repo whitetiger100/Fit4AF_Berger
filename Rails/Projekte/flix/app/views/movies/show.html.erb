@@ -1,0 +1,19 @@
+<h1><%= @movie.title %></h1>
+
+<p><%= @movie.description %></p>
+
+<p>
+	<h3>Veröffentlicht am</h3>
+	<%= @movie.released_on %>
+
+	<h3>Rating</h3>
+	<%= @movie.rating %>
+
+	<h3>Einnahmen</h3>
+	<%= number_to_currency(@movie.total_gross, unit: "€") %>
+</p>	
+
+<p>
+	<%= link_to "Alle Filme anzeigen", movies_path %>
+	<%= link_to "Zurück", request.referer %>
+</p>

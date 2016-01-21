@@ -1,20 +1,32 @@
-<h1>Movies</h1>
-<p>Folgende <%= @movies.size %> Filme sind aufgelistet</p>
-<table border=1>
+<h1>
+		<%if @movies.size == 1 %>
+			<%="MOVIE" %>
+		<% else %>
+			<%= "MOVIES" %>
+		<% end %>
+</h1>
+
+<table border="1">
 	<tr>
-		<th>NAME</th>
-		<th>Beschreibung</th>
-		<th>Erscheinungsdatum</th>
-		<th>Bewertung</th>
-		<th>Umsatz</th>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Rating</th>
+		<th>Released on</th>
+		<th>Total gross</th>
+		<th>Anzeigen</th>
 	</tr>
-<% @movies.each do |movie| %>
+<% @movies.each do | var | %>
 	<tr>
-		<td><%= movie.title %></td>
-		<td><%= movie.description %></td>
-		<td><%= movie.released_on %></td>
-		<td><%= movie.rating %></td>
-		<td><%= movie.total_gross %></td>
+		<td><%= var.title %></td>
+		<td><%= truncate(var.description, length: 40, seperator: ' ') %></td>
+		<td><%= var.rating %></td>
+		<td><%= var.released_on %></td>
+		<td><%= format_total_gross(var) %></td>
+		<td><%= link_to "Show", movie_path(var.id) %>
 	</tr>
 <% end %>
 </table>
+
+<%= link_to "Neuen Film anlegen", new_movie_path %>
+
+

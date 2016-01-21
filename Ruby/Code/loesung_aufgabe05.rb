@@ -2,7 +2,7 @@
 # 		Sommer, Herbst, Winter an; sowohl in der Langform, als auch der Kurzform
 # b. lassen Sie ausgeben wieviele Elemente das Array enthaelt, welche Jahreszeit die zweite im Array ist
 # c. fuegen Sie das Element fruehjahr hinzu
-# d. entfernen Sie das Element wieder aus dem Array
+# =>  d. entfernen Sie das Element wieder aus dem Array
 # e. ermitteln Sie mit Hilfe von ri, 
 # 		wie join Ihnen bei einer folgendermassen formatierten Ausgabe behilflich sein kann: Sommer und Herbst und Winter
 # f. notieren Sie den Befehl

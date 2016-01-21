@@ -1,13 +1,15 @@
 <h1>Events</h1>
-<!-- <p><%= "#{pluralize(@events.size, "Event ist", "Events sind")}" %> vorhanden</p> -->
-<p><%= @events.size == 1 ? "#{@events.size} Event ist vrhanden" : "#{@events.size} Events sind vorhanden" %> </p>
+<%= @events.size == 1 ? "#{@events.size} Event ist" : " #{@events.size} Events sind" %> vorhanden
+
 <table>
 	<tr>
-		<th>NAME</th>
+		<th>NAME </th>
 		<th>Beschreibung</th>
 		<th>Datum</th>
 		<th>Location</th>
 		<th>Price</th>
+		<th>Anzeigen</th>
+		<th>Editieren</th>
 	</tr>
 <% @events.each do |event| %>
 	<tr>
@@ -16,6 +18,10 @@
 		<td><%= event.start_at %></td>
 		<td><%= event.location %></td>
 		<td><%= format_price(event) %></td>
+		<td><%= link_to "Show", event_path(event.id) %></td>
+		<td><%= link_to "Edit", edit_event_path(event.id) %></td>
 	</tr>
 <% end %>
 </table>
+
+<%= link_to "Neuen Event anlegen", new_event_path %>
