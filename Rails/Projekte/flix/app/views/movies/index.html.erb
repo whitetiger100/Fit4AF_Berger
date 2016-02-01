@@ -14,6 +14,8 @@
 		<th>Released on</th>
 		<th>Total gross</th>
 		<th>Anzeigen</th>
+		<th>Ändern</th>
+		<th>Löschen</th>
 	</tr>
 <% @movies.each do | var | %>
 	<tr>
@@ -22,7 +24,9 @@
 		<td><%= var.rating %></td>
 		<td><%= var.released_on %></td>
 		<td><%= format_total_gross(var) %></td>
-		<td><%= link_to "Show", movie_path(var.id) %>
+		<td><%= link_to "Show", movie_path(var.id) %></td>
+		<td><%= link_to "Edit", edit_movie_path(var.id) %></td>
+		<td><%= link_to "Del", movie_path(var.id), method: :delete, data: {confirm: "Wirklich löschen"}  %></td>
 	</tr>
 <% end %>
 </table>
