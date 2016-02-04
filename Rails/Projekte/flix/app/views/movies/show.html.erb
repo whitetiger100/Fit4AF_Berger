@@ -1,8 +1,19 @@
 <h1><%= @movie.title %></h1>
 
+<p><%= image_for(@movie) %></p>
+
 <p><%= @movie.description %></p>
 
 <p>
+	<h3>Schauspieler</h3>
+	<%= @movie.cast %>
+
+	<h3>Regisseur</h3>
+	<%= @movie.director %>
+
+	<h3>Dauer in Minuten</h3>
+	<%= @movie.duration %>
+
 	<h3>Veröffentlicht am</h3>
 	<%= @movie.released_on %>
 
