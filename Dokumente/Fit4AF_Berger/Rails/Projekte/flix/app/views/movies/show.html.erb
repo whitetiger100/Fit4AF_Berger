@@ -1,0 +1,30 @@
+<h1><%= @movie.title %></h1>
+
+<p><%= image_for(@movie) %></p>
+
+<p><%= @movie.description %></p>
+
+<p>
+	<h3>Schauspieler</h3>
+	<%= @movie.cast %>
+
+	<h3>Regisseur</h3>
+	<%= @movie.director %>
+
+	<h3>Dauer in Minuten</h3>
+	<%= @movie.duration %>
+
+	<h3>Veröffentlicht am</h3>
+	<%= @movie.released_on %>
+
+	<h3>Rating</h3>
+	<%= @movie.rating %>
+
+	<h3>Einnahmen</h3>
+	<%= number_to_currency(@movie.total_gross, unit: "€") %>
+</p>	
+
+<p>
+	<%= link_to "Alle Filme anzeigen", movies_path %>
+	<%= link_to "Zurück", request.referer %>
+</p>
