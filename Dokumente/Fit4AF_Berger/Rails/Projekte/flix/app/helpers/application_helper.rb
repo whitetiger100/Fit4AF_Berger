@@ -1,9 +1,12 @@
 module ApplicationHelper
-	def format_total_gross(var)
+
+		def flop_top(var)
 		if var.flop?
-			content_tag(:strong, "FLOP!")
+			"FLOP!"
 		else
-			number_to_currency(var.total_gross, unit: :"€")
-		end
-	end			
+			number_to_currency(var.total_gross, unit: " € ")
+		end 
+	end
+
 end
+	

@@ -1,11 +1,11 @@
 class MoviesController < ApplicationController
 	before_action :set_movie, only: [:show, :edit, :update, :destroy]
+	before_action :set_sidebar_movies
 	def index
-		@movies = Movie.released
+		@movies = Movie.shown
 	end
 
 	def show
-		
 	end
 
 	def new
@@ -13,31 +13,43 @@ class MoviesController < ApplicationController
 	end
 
 	def create
-		@movie = Movie.create(movie_params)
-		redirect_to movies_url
+		@movie = Movie.new(movie_params)
+		if @movie.save
+			flash[:notice] = "Erfolgreich gespeichert."
+			redirect_to movies_url
+		else
+		render :new
+		end
 	end
 
 	def edit
-
 	end
 
 	def update
 		@movie.update(movie_params)
-		redirect_to movies_url
+		if @movie.save
+			redirect_to movies_url, notice: "Film erfolgreich überarbeitet."
+		else
+			render :edit
+		end
 	end
 
 	def destroy
 		@movie.destroy
-		redirect_to movies_url
+		redirect_to movies_url, alert: "Film erfolgreich gelöscht."
 	end
 
-private
+	private
+		def movie_params
+			params.require(:movie).permit(:poster_image_file, :director, :cast, :duration, :title, :description, :total_gross, :rating, :released_on)
+		end
 
-	def movie_params
-		params.require(:movie).permit(:title, :poster_image_file, :description, :cast, :director, :duration, :rating, :released_on, :total_gross)
-	end
+		def set_sidebar_movies
+			@sidebar_movies = Movie.total_gross
+		end
 
-	def set_movie
-		@movie = Movie.find(params[:id])
-	end
+		def set_movie
+			@movie = Movie.find(params[:id])
+		end
+
 end

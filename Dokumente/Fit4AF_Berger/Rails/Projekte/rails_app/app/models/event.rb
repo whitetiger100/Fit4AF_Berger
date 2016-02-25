@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+	has_many :registrations, dependend: :destroy
 
 	validates :name, presence: true
 	validates :description, length: {minimum: 25}
