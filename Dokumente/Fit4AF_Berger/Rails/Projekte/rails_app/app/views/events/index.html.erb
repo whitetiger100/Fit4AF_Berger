@@ -12,6 +12,7 @@
 			<th>Datum</th>
 			<th>Location</th>
 			<th>Price</th>
+			<th>Registrierungen</th>
 			<th>Anzeigen</th>
 			<th>Bearbeiten</th>
 			<th>Löschen</th>
@@ -25,6 +26,7 @@
 				<td><%= event.start_at %></td>
 				<td><%= event.location %></td>
 				<td><%= format_price(event) %></td>
+				<td><%= link_to "<i class='fi-torsos-all icon-blue'></i>".html_safe, event_registrations_path(event.id) %></td>
 				<td><%= link_to "<i class='fi-magnifying-glass icon-green'></i>".html_safe, event_path(event.id) %></td>
 				<td><%= link_to "<i class='fi-pencil icon-blue'></i>".html_safe, edit_event_path(event.id) %></td>
 				<td><%= link_to "<i class='fi-trash icon-red'></i>".html_safe, event_path(event.id), method: :delete, data: {confirm: "Wirklich löschen"} %></td>
