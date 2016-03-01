@@ -1,13 +1,5 @@
 <%= form_for(@movie) do |f| %>
-	<% if @movie.errors.any? %>
-		<h3>Opps! Der <%= @movie.class.name.titleize.downcase %> konnte nicht gespeichert werden.</h3>
-		Korrigieren Sie die folgenden <%= pluralize(@movie.errors.count, "error") %>:
-		<ul>
-			<% @movie.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
-			<% end %>
-		</ul>
-	<% end %>
+	<%= render "shared/errors", object: @movie %>
 	<p>
 		<%= f.label :title %><br>
 		<%= f.text_field :title %>

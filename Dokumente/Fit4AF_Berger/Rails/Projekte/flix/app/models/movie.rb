@@ -1,4 +1,5 @@
 class Movie < ActiveRecord::Base
+	has_many :reviews, dependent: :destroy
 
 	validates :title, presence: {message: ": Das Feld muss ausgefüllt sein"}
 	validates :released_on, presence: {message: ": Das Feld muss ausgefüllt sein"}
