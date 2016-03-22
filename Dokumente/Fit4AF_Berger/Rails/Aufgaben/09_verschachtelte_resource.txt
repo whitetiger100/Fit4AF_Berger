@@ -13,4 +13,4 @@ Geben Sie dem User die Möglichkeit einen Film zu bewerten, indem Sie für das R
 Nutzen Sie das in der Movie-resource bereits erstellte Error-Handling. Es ist eine create und update Bearbeitung notwendig.
 
 5. Schritt
-Die Reviews zu einem Film sollen in der Show-Action des Films als Liste angezeigt werden, ohne Kommentar. Ein Klick auf den einzelnen Review zeigt den kompletten Text in einer Show-Action des Reviews an.
+Die Reviews zu einem Film sollen in der Show-Action des Films als Liste angezeigt werden, ohne Kommentar. Ein Klick auf den einzelnen Review zeigt den kompletten Text in einer Show-Action des Reviews an.	
