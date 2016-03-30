@@ -5,7 +5,7 @@
 	<hr />
 	<%= @project.description %>
 	<hr />
-	<%= link_to "Show project tasks", project_tasks_path(@project) %>
+	<%= link_to "Show project tasks", project_tasks_path(@project.id), class:"button" %>
 </div>
 
 <div class="panel">
