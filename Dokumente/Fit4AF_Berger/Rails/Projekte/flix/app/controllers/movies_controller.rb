@@ -1,8 +1,8 @@
-class moviesController < ApplicationController
+class MoviesController < ApplicationController
 	before_action :set_movie, only: [:show, :edit, :update, :destroy]
 	
 	def index
-		@movies = movie.shown
+		@movies = Movie.shown
 	end
 
 	def show
@@ -10,11 +10,11 @@ class moviesController < ApplicationController
 	end
 
 	def new
-		@movie = movie.new
+		@movie = Movie.new
 	end
 
 	def create
-		@movie = movie.new(movie_params)
+		@movie = Movie.new(movie_params)
 		if @movie.save
 			flash[:notice] = "Erfolgreich gespeichert."
 			redirect_to movies_url
@@ -46,7 +46,7 @@ class moviesController < ApplicationController
 		end
 
 		def set_movie
-			@movie = movie.find(params[:id])
+			@movie = Movie.find(params[:id])
 		end
 
 end
